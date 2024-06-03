@@ -11,6 +11,7 @@
 run/
 run.test/
 build/
+run.*/
 
 # Doxygen generated files
 doc/generated
