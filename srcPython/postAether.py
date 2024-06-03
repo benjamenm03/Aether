@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/opt/anaconda3/bin/python
 """ Standard model visualization routines
 """
 
