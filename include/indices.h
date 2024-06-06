@@ -159,7 +159,7 @@ class Indices {
    \brief Perturbs the specific indices based on the user input
    \param iIndex which index to perturb
    \param seed random seed for perturbations
-   \param style characteristics of the perturbations (+/*, mean/std, const)
+   \param style characteristics of the perturbations (+/x, mean/std, const)
    \param DoReport output information if true
    **/
   void perturb_index(int iIndex, int seed, json style, bool DoReport);
