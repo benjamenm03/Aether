@@ -1,14 +1,14 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/include",
                 "/opt/homebrew/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "macos-gcc-arm64"
         }
     ],
     "version": 4
