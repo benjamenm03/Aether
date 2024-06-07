@@ -1,6 +1,9 @@
 // Copyright 2020, the Aether Development Team (see doc/dev_team.md for members)
 // Full license can be found in License.md
 
+// To include this file in CMake build, append this statement
+// to the CMake command: -DINCLUDE_EXCHANGE_GRID_DATA=ON
+
 #include "aether.h"
 #include <vector>
 #include <mpi.h>
@@ -11,11 +14,12 @@ std::vector<char> pack_grid(Grid &grid) {
     return data;
 }
 
-Grid unpack_grid(std::vector<char> &data, Grid &grid) {;
+Grid unpack_grid(std::vector<char> &data, Grid &grid) {
     return grid;
 }
 
 bool exchange_grid_data(Grid &grid1, Grid &grid2, const MPI_Comm &comm) {
+    bool didWork = false;
     MPI_Barrier(comm);
     
     std::vector<char> data1 = pack_grid(grid1);
@@ -40,4 +44,7 @@ bool exchange_grid_data(Grid &grid1, Grid &grid2, const MPI_Comm &comm) {
 
     grid1 = unpack_grid(recv_buffer2, grid1);
     grid2 = unpack_grid(recv_buffer1, grid2);
+    didWork = true;
+
+    return didWork;
 }

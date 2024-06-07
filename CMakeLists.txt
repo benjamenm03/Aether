@@ -18,6 +18,9 @@ endif()
 
 # Directory variables
 file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+if(NOT INCLUDE_EXCHANGE_GRID_DATA)
+  list(FILTER SRC_FILES EXCLUDE REGEX "${PROJECT_SOURCE_DIR}/src/exchange_grid_data.cpp")
+endif()
 set(MAIN_DIR ${PROJECT_SOURCE_DIR}/src/main)
 set(TESTS_DIR ${PROJECT_SOURCE_DIR}/tests)
 set(OUT_DIR ${PROJECT_SOURCE_DIR}/src/output)
